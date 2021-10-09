@@ -14,15 +14,28 @@
 ## Questions
 
 1. What command can I use to view the commit history?
+git log
 
-1. What command can I use to undo the last commit?
+2. What command can I use to undo the last commit?
+git reset HEAD~1
 
-1. What command can I use to create a new branch and a new tag?
+3. What command can I use to create a new branch and a new tag?
+git branch <branch_name>
+git tag <tag_name>
 
-1. How do I exclude a file / folder from a commit?
+4. How do I exclude a file / folder from a commit?
+Add file to .gitignore to exclude it from future possible commits.
+To exclude file from only current commit add ':!' e.g. git add --all -- :!dont_upload.txt
 
-1. In case of a merge conflict, what commands can be used to resolve it?
+5. In case of a merge conflict, what commands can be used to resolve it?
+To view the files that caused conflict: "git status"
+To view commits that caused comflict: "git log --merge"
+To undo changes to files: "git reset --merge"
+Abort merge: "git merge --abort"
 
-1. `*` What are pre-commit hooks and post-commit hooks, and what are they for?
+6. `*` What are pre-commit hooks and post-commit hooks, and what are they for?
+Pre-commit and post-commit hooks are scripts that will be executed before and after commit respectively. Pre-commit hooks are usually executed to verify files and possibly modify commit.
+Post-commit hooks cannot modify commits and are usually used for notifications.
 
-1. `*` How do I change the last commit without adding a new commit?
+7. `*` How do I change the last commit without adding a new commit?
+git commit --amend
